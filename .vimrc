@@ -204,59 +204,62 @@ call vundle#begin()
 "  'githubUsername/reponame
 " NOTE: Remember to close vim and run :PluginInstall after adding new plugins.
 
- " Let Vundle Manage Vundle Required:
+" Let Vundle Manage Vundle Required:
   Plugin 'gmarik/Vundle.vim'
 
- " NERDTree:
+" Startify
+  Plugin 'mhinz/vim-startify'
+
+" NERDTree:
   Plugin 'scrooloose/nerdtree'
- " NERDTree  Settings:
- " Open a NERDTree automatically when vim starts up
-   autocmd vimenter * NERDTree
- " Open a NERDTree automatically when vim starts up if no files were specified
-   autocmd StdinReadPre * let s:std_in=1
-   autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
- " Open NERDTree automatically when vim starts up on opening a directory
-   autocmd StdinReadPre * let s:std_in=1
-   autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
- " Close vim if the only window left open is a NERDTree
-   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
- " Make NERDTree pretty
-   let NERDTreeMinimalUI = 1
-   let NERDTreeDirArrows = 1
- " NOTE: Use <Leader>-t to toggle NERDTree
+" NERDTree  Settings:
+" Open a NERDTree automatically when vim starts up
+  autocmd vimenter * NERDTree
+" Open a NERDTree automatically when vim starts up if no files were specified
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Open NERDTree automatically when vim starts up on opening a directory
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" Close vim if the only window left open is a NERDTree
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Make NERDTree pretty
+  let NERDTreeMinimalUI = 1
+  let NERDTreeDirArrows = 1
+" NOTE: Use <Leader>-t to toggle NERDTree
  
- " NERDTree Git Flags:
- Plugin 'Xuyuanp/nerdtree-git-plugin'
+" NERDTree Git Flags:
+  Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " SCSS Syntax:
- Plugin 'cakebaker/scss-syntax.vim'
+  Plugin 'cakebaker/scss-syntax.vim'
 
- " Indent Lines:
- " TODO: This doesn't work. Need to recompile vim with the conceal option.
- " NOTE: See here: https://superuser.com/questions/708245/re-compile-vim-with-options
- Plugin 'Yggdroot/indentLine'
- " Indent Lines Settings:
- " Enable indent lines:
- set conceallevel=2
- let g:indentLine_enabled = 1
- "Change conceal behavior (I'm not exactly sure what this does?):
- let g:indentLine_concealcursor = 'inc'
- let g:indentLine_conceallevel = 2
- " Lines follow color scheme:
- " let g:indentLine_setColors = 0
- let g:indentLine_color_term = 239
- " Indent character:
- let g:indentLine_char = '│' 
+" Indent Lines:
+" TODO: This doesn't work. Need to recompile vim with the conceal option.
+" NOTE: See here: https://superuser.com/questions/708245/re-compile-vim-with-options
+  Plugin 'Yggdroot/indentLine'
+" Indent Lines Settings:
+" Enable indent lines:
+  set conceallevel=2
+  let g:indentLine_enabled = 1
+"Change conceal behavior (I'm not exactly sure what this does?):
+  let g:indentLine_concealcursor = 'inc'
+  let g:indentLine_conceallevel = 2
+" Lines follow color scheme:
+" let g:indentLine_setColors = 0
+  let g:indentLine_color_term = 239
+" Indent character:
+  let g:indentLine_char = '│' 
 
- " Folding:
- Plugin 'tmhedberg/SimpylFold'
- " Folding Settings:
- " See docstrings for folded code:
- let g:SimpylFold_docstring_preview=1
- " NOTE: Use za in normal mode to toggle fold.
+" Folding:
+  Plugin 'tmhedberg/SimpylFold'
+" Folding Settings:
+" See docstrings for folded code:
+  let g:SimpylFold_docstring_preview=1
+" NOTE: Use za in normal mode to toggle fold.
 
- " Git Wrapper:
- Plugin 'tpope/vim-fugitive'
+" Git Wrapper:
+  Plugin 'tpope/vim-fugitive'
 
 " NOTE: All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -272,12 +275,12 @@ filetype plugin indent on    " required
 "
 " NOTE: Remember to close vim and run :BundleInstall after adding new bundles.
 
-  " Some Colorschemes:
+" Some Colorschemes:
   Bundle 'flazz/vim-colorschemes'
 
-  " Syntastic:
+" Syntastic:
   Bundle 'vim-syntastic/syntastic'
-  " Syntastic Settings:
+" Syntastic Settings:
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
@@ -287,41 +290,37 @@ filetype plugin indent on    " required
   let g:syntastic_check_on_wq = 0
   let g:syntastic_auto_jump = 0
 
-  " Fuzzy Finder:
+" Fuzzy Finder:
   Bundle 'kien/ctrlp.vim'
 
-  " Toggle Comments:
+" Toggle Comments:
   Bundle 'tpope/vim-commentary'
-  " NOTE: Use gc in visual mode to comment out selection
+" NOTE: Use gc in visual mode to comment out selection
 
-  " Surround:
+" Surround:
   Bundle 'tpope/vim-surround'
-  " NOTE: Use ysiw+( (, {, <, ", ', [, etc ) in normal mode to surround
-  " NOTE: Use S+( (, {, <, ", ', [, etc) in visual mode to surround
+" NOTE: Use ysiw+( (, {, <, ", ', [, etc ) in normal mode to surround
+" NOTE: Use S+( (, {, <, ", ', [, etc) in visual mode to surround
 
-  " Align Tabs:
+" Align Tabs:
   Bundle 'godlygeek/tabular'
-  " NOTE: Use :Tabularize + regexp to align text.
+" NOTE: Use :Tabularize + regexp to align text.
 
-  " BUG: Not working
-  " Git Wrapper:
-  " Plugin 'tpope/vim-fugitive'
+" BUG: Not working.
+" Multiple Cursors:
+" Bundle 'terryma/vim-multiple-cursors'
 
-  " BUG: Not working.
-  " Multiple Cursors:
-  " Bundle 'terryma/vim-multiple-cursors'
-
-  " JSON:
+" JSON:
   Bundle 'leshill/vim-json'
 
-  " Javascript:
+" Javascript:
   Bundle 'pangloss/vim-javascript'
 
-  " HTML Indent:
+" HTML Indent:
   Bundle 'indenthtml.vim'
 
-  " Markdown:
+" Markdown:
   Bundle 'tpope/vim-markdown'
 
-  " Less:
+" Less:
   Bundle 'groenewege/vim-less'
