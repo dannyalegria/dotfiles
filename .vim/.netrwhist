@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/danielalegria/Desktop/Code/Javascript/Polymer'
+let g:netrw_dirhist_2='/Users/danielalegria/Desktop/Code/Javascript'
+let g:netrw_dirhist_3='/Users/danielalegria/.vim'
+let g:netrw_dirhist_4='/Users/danielalegria'
+let g:netrw_dirhist_5='/Users/danielalegria/sideboardwebsite'
