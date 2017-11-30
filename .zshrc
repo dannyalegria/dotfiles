@@ -156,11 +156,9 @@ alias snig='sudo npm install -g'
 
 alias config='/usr/bin/git --git-dir=/Users/danielalegria/.cfg/ --work-tree=/Users/danielalegria'
 
-alias nope="git commit -m 'ಠ_ಠ'"
+alias nope='git commit -m "ಠ_ಠ"'
 
-alias quickcommit="git add . && git commit -m 'Routine commit.'"
-
-alias quickpush="git add . && git commit -m 'Routine commit.' && git push'"
+alias quickcommit='git add . && git commit -m "Routine commit."'
 
 # Custom functions:
 
